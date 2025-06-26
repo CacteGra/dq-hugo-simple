@@ -1,6 +1,6 @@
 baseURL = "https://digitalquint.click"
 languageCode = 'en-us'
-title = 'John Doe - Portfolio & Blog'
+title = 'DigitalQuint - Portfolio & Blog'
 theme = 'hugo-noir' # This is the theme you are using
 
 # URL handling
