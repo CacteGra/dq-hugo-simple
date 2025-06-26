@@ -15,7 +15,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          script: cd ${{ secrets.PROJECT_PATH }} && git pull --recurse-submodules git@github.com:CacteGra/digitalquint-hugo.git
+          script: cd ${{ secrets.PROJECT_PATH }} && git pull --recurse-submodules
 
       - uses: actions/checkout@v2
       - name: Build the docker-compose stack
