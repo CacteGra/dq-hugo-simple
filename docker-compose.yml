@@ -1,0 +1,36 @@
+services:
+  caddy:
+    container_name: caddy
+    image: ghcr.io/authp/authp:v1.0.1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      - DOMAIN_NAME
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/static:/srv
+      - ./caddy/config:/config
+      - ./caddy/data:/data
+    networks:
+      websites:
+
+  hugo:
+    container_name: hugo_blog
+    image: hugomods/hugo
+    restart: unless-stopped
+    ports:
+      - "1313:1313"
+    volumes:
+      - ./hugo/site:/src
+    command: server -D --buildDrafts --buildFuture --bind 0.0.0.0
+    environment:
+      - HUGO_THEME=KeepIt
+    networks:
+      - websites
+
+networks:
+  websites:
+     driver: bridge
