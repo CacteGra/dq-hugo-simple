@@ -4,7 +4,7 @@ title = 'John Doe - Portfolio & Blog'
 theme = 'hugo-noir' # This is the theme you are using
 
 # URL handling
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = true
 
 # Multilingual configuration
