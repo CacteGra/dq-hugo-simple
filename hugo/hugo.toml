@@ -5,7 +5,7 @@ theme = 'hugo-noir' # This is the theme you are using
 
 # URL handling
 relativeURLs = false
-canonifyURLs = true
+canonifyURLs = false
 
 # Multilingual configuration
 # If you want to use multiple languages, uncomment and configure the [languages] section below.
