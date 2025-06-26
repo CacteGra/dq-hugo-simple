@@ -1,88 +1,11 @@
-baseURL = "https://digitalquint.click"
+baseURL = "https://johndoe.dev"
 languageCode = 'en-us'
-title = 'DigitalQuint - Portfolio & Blog'
-theme = 'hugo-noir' # This is the theme you are using
+title = 'John Doe'
+theme = 'hugo-noir'
 
 # URL handling
 relativeURLs = true
 canonifyURLs = true
-
-# Multilingual configuration
-# If you want to use multiple languages, uncomment and configure the [languages] section below.
-# Ensure you have corresponding content directories (e.g., content/en, content/es)
-# and i18n files in themes/hugo-noir/i18n/ for each language.
-# Also, create data files like data/en/author.yaml, data/es/author.yaml for language-specific author info.
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true # Creates URLs like /en/blog/
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "John Doe - Portfolio & Blog"
-    weight = 1
-    contentDir = "content/en"
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        name = "About"
-        pageRef = "/about" # Corresponds to content/en/about.md or content/en/about/_index.md
-        weight = 1
-      [[languages.en.menu.main]]
-        name = "Experience"
-        pageRef = "/experience"
-        weight = 2
-      [[languages.en.menu.main]]
-        name = "Projects"
-        pageRef = "/projects"
-        weight = 3
-      [[languages.en.menu.main]]
-        name = "Blog"
-        pageRef = "/blogs" # Assumes a section named 'blogs'
-        weight = 4
-      [[languages.en.menu.main]]
-        name = "Contact"
-        pageRef = "/contact"
-        weight = 5
-
-  # Example for Spanish (es) - uncomment and adapt if needed
-  # [languages.es]
-  #   languageName = "Español"
-  #   title = "John Doe - Portafolio y Blog"
-  #   weight = 2
-  #   contentDir = "content/es"
-  #   [languages.es.menu]
-  #     [[languages.es.menu.main]]
-  #       name = "Sobre Mí"
-  #       pageRef = "/about"
-  #       weight = 1
-  #     [[languages.es.menu.main]]
-  #       name = "Experiencia"
-  #       pageRef = "/experience"
-  #       weight = 2
-  #     [[languages.es.menu.main]]
-  #       name = "Proyectos"
-  #       pageRef = "/projects"
-  #       weight = 3
-  #     [[languages.es.menu.main]]
-  #       name = "Blog"
-  #       pageRef = "/blogs"
-  #       weight = 4
-  #     [[languages.es.menu.main]]
-  #       name = "Contacto"
-  #       pageRef = "/contact"
-  #       weight = 5
-
-  # Example for French (fr) - uncomment and adapt if needed
-  # [languages.fr]
-  #   languageName = "Français"
-  #   title = "John Doe - Portfolio et Blog"
-  #   weight = 3
-  #   contentDir = "content/fr"
-  #   [languages.fr.menu]
-  #     [[languages.fr.menu.main]]
-  #       name = "À Propos"
-  #       pageRef = "/about"
-  #       weight = 1
-  #     # ... other French menu items
 
 # Taxonomy configuration
 [taxonomies]
@@ -90,71 +13,266 @@ defaultContentLanguageInSubdir = true # Creates URLs like /en/blog/
   tag = "tags"
 
 [params]
-  # Basic profile information - common across languages
-  # This is used by the theme for the author name in the footer, social links, etc.
-  name = "John Doe"
-  profile_image = "/images/profile_placeholder.jpg" # Place in your site's static/images/ directory
-  # Social and contact information
-  email = "john.doe@example.com"
-  github = "https://github.com/johndoe"
-  github_username = "johndoe"
-  linkedin = "https://linkedin.com/in/johndoe"
-  linkedin_username = "johndoe"
-  twitter = "https://twitter.com/johndoe"
-  twitter_username = "johndoe"
-  # Add other social links as needed by the theme or your content
-  # discord = "johndoe#1234"
-  # medium = "https://medium.com/@johndoe"
-  # leetcode = "https://leetcode.com/johndoe"
-  # monkeytype = "https://monkeytype.com/profile/johndoe"
-  # kaggle = "https://www.kaggle.com/johndoe"
-  # instagram = "https://instagram.com/johndoe"
+name = "John Doe"
+location = "Anytown, USA"
+description = "AI Developer. ML Engineer. I finetune models, build scalable pipelines and automate workflows."
+profile_image = "/images/profile.jpg"
+discord = "johndoe123"
+github = "https://github.com/johndoe123"
+github_username = "johndoe123"
+email = "johndoe@example.com"
+twitter = "https://www.twitter.com/johndoe123"
+twitter_username = "johndoe123"
+medium = "https://www.medium.com/@johndoe123"
+linkedin = "https://www.linkedin.com/in/johndoe123"
+linkedin_username = "johndoe123"
+instagram = "https://instagram.com/johndoe123"
+leetcode = "https://leetcode.com/johndoe123"
+leetcode_username = "johndoe123"
+monkeytype = "https://monkeytype.com/profile/johndoe123"
+monkeytype_username = "johndoe123"
+kaggle = "https://www.kaggle.com/johndoe123"
+kaggle_username = "johndoe123"
 
-  # Example for adding honors/awards (optional, adapt to theme features)
-  [[params.honors]]
-    institution = "Lorem University"
-    title = "Summa Cum Laude"
-    date = "May 2020"
+[[params.honors]]
+institution = "Generic College"
+title = "Academic Topper"
+date = "March 2023"
 
-  [[params.honors]]
-    institution = "Ipsum Institute"
-    title = "Best Project Award"
-    date = "December 2019"
+[[params.honors]]
+institution = "Valley High Academy"
+title = "Outstanding Achievement in STEM"
+date = "May 2018"
 
-  # Example for certifications (optional, adapt to theme features)
-  [[params.certifications]]
-    title = "Professional Widget Certification"
-    company = "Widgets Inc."
-    date = "Valid until Jan 2025"
-    url = "https://example.com/certification/123"
+[[params.certifications]]
+title = "Azure AI Engineering Specialist"
+date = "Dec 2024"
+url = "https://example.com/cert-azure"
 
-  # Example for voluntary work (optional, adapt to theme features)
-  [[params.voluntary]]
-    role = "Community Helper"
-    organization = "Local Charity Group"
-    period = "2021 - Present"
-    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+[[params.certifications]]
+title = "Google Cloud ML Professional"
+date = "March 2024" 
+url = "https://example.com/cert-gcp"
 
-# Main menu (used as a fallback if language-specific menus are not fully defined or if not using multilingual features)
-# For multilingual sites, it's generally better to define menus within each language block as shown above.
+[[params.experience]]
+company = "Lorem Technologies"
+role = "AI Research Engineer"
+period = "Jan 2023 - Dec 2023"
+logo = "/images/company/lorem.png"
+description = "Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+responsibilities = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "Ut enim ad minim veniam, quis nostrud exercitation",
+    "Duis aute irure dolor in reprehenderit in voluptate",
+    "Excepteur sint occaecat cupidatat non proident"
+]
+
+[[params.experience]]
+company = "Ipsum Solutions"
+role = "Machine Learning Engineer"
+period = "Jun 2022 - Dec 2022"
+logo = "/images/company/ipsum.png"
+description = "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+responsibilities = [
+    "Sed ut perspiciatis unde omnis iste natus error",
+    "Nemo enim ipsam voluptatem quia voluptas sit",
+    "At vero eos et accusamus et iusto odio dignissimos",
+    "Et harum quidem rerum facilis est et expedita"
+]
+
+[[params.experience]]
+company = "Dolor Analytics"
+role = "Data Scientist"
+period = "Jan 2022 - May 2022"
+logo = "/images/company/dolor.png"
+description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit."
+responsibilities = [
+    "Nam libero tempore, cum soluta nobis est eligendi",
+    "Temporibus autem quibusdam et aut officiis debitis",
+    "Itaque earum rerum hic tenetur a sapiente delectus"
+]
+
+[[params.experience]]
+company = "Sit Amet Corp"
+role = "Open Source Contributor"
+period = "2021 - Present"
+description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse."
+github_username = "loremipsum"
+
+[[params.projects]]
+title = "Project Consectetur"
+description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+tech = "Python, TensorFlow, Docker, Redis"
+image = "/images/projects/consectetur.png"
+link = "https://github.com/loremipsum/consectetur"
+
+[[params.projects]]
+title = "Adipiscing Platform"
+description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur."
+tech = "React, Node.js, MongoDB, AWS"
+image = "/images/projects/adipiscing.png"
+link = "https://github.com/loremipsum/adipiscing"
+
+[[params.projects]]
+title = "Tempor Analytics"
+description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
+tech = "Python, FastAPI, PostgreSQL, Docker"
+image = "/images/projects/tempor.png"
+link = "https://github.com/loremipsum/tempor"
+
+[[params.projects]]
+title = "Eiusmod Framework"
+description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+tech = "Python, PyTorch, MLflow, Kubernetes"
+image = "/images/projects/eiusmod.png"
+link = "https://github.com/loremipsum/eiusmod"
+
+[[params.projects]]
+title = "Incididunt Engine"
+description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus."
+tech = "Python, Scikit-learn, Flask, Redis"
+image = "/images/projects/incididunt.png"
+link = "https://github.com/loremipsum/incididunt"
+
+[[params.projects]]
+title = "Labore System"
+description = "Et harum quidem rerum facilis est et expedita distinctio nam libero tempore."
+tech = "JavaScript, Express, MongoDB, Docker"
+image = "/images/projects/labore.jpg"
+link = "https://github.com/loremipsum/labore"
+
+[[params.projects]]
+title = "Dolore Platform"
+description = "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe."
+tech = "Python, Django, PostgreSQL, Celery"
+image = "/images/projects/dolore.png"
+link = "https://github.com/loremipsum/dolore"
+
+[[params.projects]]
+title = "Magna Analytics"
+description = "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus."
+tech = "Python, Pandas, Streamlit, AWS"
+image = "/images/projects/magna.png"
+link = "https://github.com/loremipsum/magna"
+
+[[params.projects]]
+title = "Aliqua Framework"
+description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae."
+tech = "TypeScript, React, GraphQL, Docker"
+image = "/images/projects/aliqua.jpg"
+link = "https://github.com/loremipsum/aliqua"
+
+[[params.projects]]
+title = "Excepteur System"
+description = "Nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure reprehenderit."
+tech = "Python, FastAPI, Redis, Kubernetes"
+image = "/images/projects/excepteur.jpg"
+link = "https://github.com/loremipsum/excepteur"
+
+[[params.blogs]]
+title = "Lorem Ipsum Systems"
+date = "2025-03-15"
+summary = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+tags = ["Lorem", "Ipsum", "Dolor"]
+content = """
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...
+"""
+link = "https://medium.com/@loremipsum/lorem-systems"
+
+[[params.blogs]]
+title = "The Future of Dolor"
+date = "2025-02-28"
+summary = "At vero eos et accusamus et iusto odio dignissimos ducimus."
+tags = ["Sit", "Amet", "Consectetur"]
+content = """
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis...
+"""
+link = "https://medium.com/@loremipsum/future-dolor"
+
+[[params.blogs]]
+title = "Adipiscing: A Practical Guide"
+date = "2025-02-10"
+summary = "Nam libero tempore, cum soluta nobis est eligendi optio."
+tags = ["Elit", "Tempor", "Guide"]
+content = """
+Et harum quidem rerum facilis est et expedita distinctio...
+"""
+link = "https://medium.com/@loremipsum/adipiscing-guide"
+
+[[params.blogs]]
+title = "Optimizing Incididunt"
+date = "2025-01-20"
+summary = "Temporibus autem quibusdam et aut officiis debitis."
+tags = ["Labore", "Dolore", "Magna"]
+content = """
+Itaque earum rerum hic tenetur a sapiente delectus...
+"""
+link = "https://medium.com/@loremipsum/optimizing-incididunt"
+
+[[params.blogs]]
+title = "Aliqua: A Comprehensive Guide"
+date = "2024-12-15"
+summary = "Quis autem vel eum iure reprehenderit qui in ea voluptate."
+tags = ["Ut", "Enim", "Minim"]
+content = """
+Nisi ut aliquid ex ea commodi consequatur quis autem...
+"""
+link = "https://medium.com/@loremipsum/aliqua-guide"
+
+[[params.blogs]]
+title = "Veniam in Practice"
+date = "2024-11-20"
+summary = "Duis aute irure dolor in reprehenderit in voluptate velit."
+tags = ["Esse", "Cillum", "Dolore"]
+content = """
+Excepteur sint occaecat cupidatat non proident...
+"""
+link = "https://medium.com/@loremipsum/veniam-practice"
+
+[[params.blogs]]
+title = "Fugiat for Systems"
+date = "2024-10-25"
+summary = "Sunt in culpa qui officia deserunt mollit anim id est laborum."
+tags = ["Nulla", "Pariatur", "Systems"]
+content = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+"""
+link = "https://medium.com/@loremipsum/fugiat-systems"
+
+[[params.blogs]]
+title = "Best Practices in Consectetur"
+date = "2024-09-30"
+summary = "Sed do eiusmod tempor incididunt ut labore et dolore magna."
+tags = ["Best", "Practices", "Guide"]
+content = """
+Ut enim ad minim veniam, quis nostrud exercitation...
+"""
+link = "https://medium.com/@loremipsum/consectetur-practices"
+
+[[params.voluntary]]
+role = "Community Lead"
+organization = "Lorem Foundation"
+period = "2020 - Present"
+description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
+
 [menu]
   [[menu.main]]
     name = "About"
-    pageRef = "/about"
+    url = "/about/"
     weight = 1
   [[menu.main]]
     name = "Experience"
-    pageRef = "/experience"
+    url = "/experience/"
     weight = 2
   [[menu.main]]
     name = "Projects"
-    pageRef = "/projects"
+    url = "/projects/"
     weight = 3
   [[menu.main]]
-    name = "Blog"
-    pageRef = "/blogs"
+    name = "Blogs"
+    url = "/blogs/"
     weight = 4
   [[menu.main]]
-    name = "Contact Me" # Note: "Contact" is used in language-specific menus above for consistency
-    pageRef = "/contact"
-    weight = 5 
+    name = "Contact Me"
+    url = "/contact/"
+    weight = 5
