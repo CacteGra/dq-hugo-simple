@@ -27,7 +27,7 @@ services:
       - ./hugo:/src
     command: server -D --buildDrafts --buildFuture --bind 0.0.0.0
     environment:
-      - HUGO_THEME=KeepIt
+      - HUGO_THEME=hugo-noir
     networks:
       - websites
 
