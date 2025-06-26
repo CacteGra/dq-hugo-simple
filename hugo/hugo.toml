@@ -4,8 +4,8 @@ title = 'John Doe - Portfolio & Blog'
 theme = 'hugo-noir' # This is the theme you are using
 
 # URL handling
-relativeURLs = false
-canonifyURLs = false
+relativeURLs = true
+canonifyURLs = true
 
 # Multilingual configuration
 # If you want to use multiple languages, uncomment and configure the [languages] section below.
@@ -13,7 +13,7 @@ canonifyURLs = false
 # and i18n files in themes/hugo-noir/i18n/ for each language.
 # Also, create data files like data/en/author.yaml, data/es/author.yaml for language-specific author info.
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false # Creates URLs like /en/blog/
+defaultContentLanguageInSubdir = true # Creates URLs like /en/blog/
 
 [languages]
   [languages.en]
