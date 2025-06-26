@@ -1,3 +1,6 @@
 {$DOMAIN_NAME} {
     reverse_proxy hugo_blog:1313
 }
+www.{$DOMAIN_NAME} {
+    redir https://{$DOMAIN_NAME}{uri}
+}
