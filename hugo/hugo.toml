@@ -13,7 +13,7 @@ canonifyURLs = false
 # and i18n files in themes/hugo-noir/i18n/ for each language.
 # Also, create data files like data/en/author.yaml, data/es/author.yaml for language-specific author info.
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true # Creates URLs like /en/blog/
+defaultContentLanguageInSubdir = false # Creates URLs like /en/blog/
 
 [languages]
   [languages.en]
