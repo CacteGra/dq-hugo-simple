@@ -1,0 +1,3 @@
+[submodule "hugo/themes/hugo-noir"]
+	path = hugo/themes/hugo-noir
+	url = git@github.com:CacteGra/hugo-noir.git
