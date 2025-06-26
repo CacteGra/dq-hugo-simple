@@ -1,3 +1,7 @@
+{
+    email {$EMAIL}
+}
+
 {$DOMAIN_NAME} {
     reverse_proxy hugo_blog:1313
 }
