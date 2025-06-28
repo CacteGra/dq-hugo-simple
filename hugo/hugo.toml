@@ -58,7 +58,7 @@ url = ""
 company = "Alignerr"
 role = "AI Prompt & Adjustment Specialist"
 period = "April 2025 - May 2025"
-logo = "/assets/company/meta-logo.png"
+logo = "/images/company/meta-logo.png"
 description = "Community Alignment France Evaluation for Meta AI."
 responsibilities = [
     "Writing or applying rubrics to evaluate prompts or model responses",
