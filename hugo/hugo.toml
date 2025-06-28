@@ -1,6 +1,6 @@
 baseURL = "https://digitalquint.click"
 languageCode = 'en-us'
-title = 'DigitalQuint'
+title = 'Matthieu Brion'
 theme = 'hugo-noir'
 
 # URL handling
@@ -52,7 +52,7 @@ linkedin_username = "matthieubrion"
 [[params.certifications]]
 title = "Master's degree in Languages and Marketing - La Rochelle University"
 date = "September 2015" 
-#url = "https://example.com/cert-gcp"
+url = ""
 
 [[params.experience]]
 company = "Alignerr"
