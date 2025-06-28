@@ -102,7 +102,7 @@ responsibilities = [
 title = "TrashIt - Trash locator"
 description = "Web app providing users with key features to manage their trash: location-based map, anti-bot Captcha forms, trash pickup hours, food wrapper scanning, data source from any API or file from admin panel."
 tech = "Python, Linux, Docker, PostgreSQL, JavaScript"
-image = "/images/projects/trashit.png"
+image = "/images/projects/trashit-logo.png"
 link = "https://trashit.click"
 
 # [[params.projects]]
