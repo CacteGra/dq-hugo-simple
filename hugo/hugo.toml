@@ -1,4 +1,3 @@
-baseURL = "https://digitalquint.click"
 languageCode = 'en-us'
 title = 'Matthieu Brion'
 theme = 'hugo-noir'

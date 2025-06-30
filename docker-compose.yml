@@ -25,7 +25,7 @@ services:
       - "1313:1313"
     volumes:
       - ./hugo:/src
-    command: server -D --buildDrafts --buildFuture --bind 0.0.0.0 --baseURL=https://digitalquint.click --appendPort=false
+    command: server -D --buildDrafts --buildFuture --bind 0.0.0.0 --baseURL=https://${DOMAIN_NAME} --appendPort=false
     environment:
       - HUGO_THEME=hugo-noir
     networks:
