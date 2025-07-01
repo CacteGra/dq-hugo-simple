@@ -27,7 +27,7 @@ services:
       - ./hugo:/src
     command: server -D --buildDrafts --buildFuture --bind 0.0.0.0 --baseURL=https://${DOMAIN_NAME} --appendPort=false
     environment:
-      - HUGO_THEME=hugo-noir
+      - HUGO_THEME=hugo-coder
     networks:
       - websites
 

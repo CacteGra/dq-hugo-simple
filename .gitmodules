@@ -1,3 +1,3 @@
-[submodule "hugo/themes/hugo-noir"]
-	path = hugo/themes/hugo-noir
-	url = git@github.com:CacteGra/hugo-noir.git
+[submodule "hugo/themes/hugo-coder"]
+	path = hugo/themes/hugo-coder
+	url = https://github.com/luizdepra/hugo-coder.git
