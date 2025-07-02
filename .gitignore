@@ -260,3 +260,7 @@ dmypy.json
 
 # Hugo static site
 public/
+
+caddy/config
+caddy/data
+caddy/static
