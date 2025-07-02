@@ -4,8 +4,6 @@ languageCode = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
 
-canonifyURLs = true
-
 [pagination]
 pagerSize = 6
 
