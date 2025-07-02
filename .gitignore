@@ -257,3 +257,6 @@ dmypy.json
 *.code-workspace
 
 !.gitignore
+
+# Hugo static site
+public/
