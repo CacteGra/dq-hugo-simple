@@ -14,11 +14,7 @@ pagerSize = 6
 
 [markup]
 [markup.highlight]
-noClasses = false
-
-[markup.goldmark]
-[markup.goldmark.renderer]
-unsafe = true
+style = 'monokai'
 
 [params]
 author = "Matthieu Brion"
@@ -45,9 +41,9 @@ hideColorSchemeToggle = false
 # Series see also post count
 maxSeeAlsoItems = 5
 # Custom CSS
-customCSS = []
+customCSS = ["css/custom_css.css"]
 # Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
-customSCSS = []
+customSCSS = ["scss/custom_scss.scss"]
 
 # Custom JS
 customJS = []
@@ -178,6 +174,19 @@ url = "https://medium.com/@cactegra"
 # rel = "alternate"
 # type = "application/rss+xml"
 
+[[params.experience]]
+company = "Alignerr"
+role = "AI Prompt & Adjustment Specialist"
+period = "April 2025 - May 2025"
+logo = "/assets/company/meta-logo.png"
+description = "Community Alignment France Evaluation for Meta AI."
+company_link = "https://www.alignerr.com/"
+responsibilities = [
+    "Writing or applying rubrics to evaluate prompts or model responses",
+    "Reviewing LLM-generated content for accuracy, reasoning, tone, or completeness",
+    "Working on prompt evaluation, academic grading, or product QA"
+]
+
 [[menu.main]]
 name = "About"
 weight = 1
@@ -193,10 +202,10 @@ name = "Projects"
 weight = 3
 url = "projects/"
 
-[[menu.main]]
-name = "Contact me"
-weight = 5
-url = "contact/"
+# [[menu.main]]
+# name = "Contact me"
+# weight = 5
+# url = "contact/"
 
 # [languages.pt-br]
 # languageName = ":brazil:"

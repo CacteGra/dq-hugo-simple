@@ -1,0 +1,14 @@
+<style>
+body.colorscheme-dark h1, body.colorscheme-dark h2, body.colorscheme-dark h3, body.colorscheme-dark h4, body.colorscheme-dark h5, body.colorscheme-dark h6 {
+  color: #32d543 !important;
+}
+
+.content {
+  color: #32d543 !important;
+}
+
+body.colorscheme-dark{
+  color: #32d543 !important;
+  background-color: #000 !important;
+}
+</style>

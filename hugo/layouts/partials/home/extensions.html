@@ -1,0 +1,103 @@
+{{/*
+You can add further theme extensions or customizations here if they should
+appear in after the "about" section.
+*/}}
+
+<section class="experience-section">
+    <h2 class="">Experience</h2>
+    <div class="">
+        {{ $experienceData := index site.Data "experience" }}
+        {{ $experience := cond (and $experienceData $experienceData.experience) $experienceData.experience site.Params.experience }}
+        {{ with $experience }}
+        {{ range $index, $exp := . }}
+        <div class="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gray-700 before:rounded-full">
+            {{ if eq .company "Open Source Contributor" }}
+            <div class="absolute -left-1.5 top-0 w-3 h-3 bg-[#121212] border border-blue-400 rounded-full"></div>
+            {{ else }}
+            <div class=""></div>
+            {{ end }}
+            <div class="">
+                <h3>
+                {{ if .company_link }}
+                    <a href="{{ .company_link }}" target="_blank" rel="noopener noreferrer" class="">
+                        {{ .company }}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                        </svg>
+                    </a>
+                {{ else }}
+                    {{ .company }}
+                {{ end }}
+                </h3>
+            </div>
+            <u>Role:</u>
+            <p class="">{{ .role }}</p>
+            <p class="">{{ .period }}</p>
+            <p class="">{{ if .country }} {{ .country }}{{ end }}</p>
+            <u>Description:</u>
+            <p class="">{{ .description }}</p>
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+</section>
+
+<section class="project-section">
+    <div class="">
+        <h2 class="">Projects</h2>
+    </div>
+    <div class="">
+        {{ range first 2 (where .Site.RegularPages "Section" "projects") }}
+        <div class="">
+            <div class="">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="">
+                
+                <div class="">
+                    <h3 class="">{{ .Title }}</h3>
+                    <div class="">
+                        {{ $techs := split .Params.tech "," }}
+                        {{ range $tech := $techs }}
+                            {{ $cleanTech := trim $tech " " }}
+                            <span class="">
+                            {{ $cleanTech }}
+                            </span>
+                        {{ end }}
+                        </div>                          
+                    <p class="">{{ .Summary }}</p>
+                    
+                    <!-- Learn More button -->
+                    <a href="{{ .Params.link }}" class="blog-url">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -6 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                            <path d="M6 12H18M18 12L13 7M18 12L13 17"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        <div class="">
+            <a href="/projects" class="">View All</a>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="">
+        <h2 class="">Blogs</h2>
+    </div>
+    <div class="">
+        {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+        <div class="">
+            <p class="">{{ .Date.Format "January 2, 2006" }}</p>
+            <a href="{{ .RelPermalink }}" class="">
+                <h3 class="post-url">{{ .Title }}</h3>
+            </a>
+            <p class="">{{ .Description }}</p>
+        </div>
+        {{ end }}
+    </div>
+    <div class="">
+        <a href="/posts" class="">View All</a>
+    </div>
+</section>

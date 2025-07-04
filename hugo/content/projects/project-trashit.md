@@ -5,6 +5,9 @@ draft: false
 menu: "main" # Optional: if you want it to appear in the main menu configured in hugo.toml
 layout: "single" # Or specific layout if defined
 description: "Trash Better, Improve Recycling. Utilize Open Data."
+summary: "Harnessing the power of open data to help users find the right spot to take out their trash by mapping their direct environment, improve recycling with choosing the right garbage can and reduce unauthorized waste dumping by redirecting to closest trashes and reporting local issues."
+image: "/images/projects/trashit-logo.png"
+link: "https://trashit.click"
 ---
 - [TrashIt](/images/projects/trashit-logo.png)
 - TrashIt brings residents across the globe closer to recycle waste flawlessly and with ease. Through open data taken from collaborative project OpenStreetMap and local government agencies' open data, TrashIt displays up-to-date trash and other waste dropoff points, pick-up schedules for when to take the trash out on the street and food packaging scan capability to help users throw away in the right garbage can.
