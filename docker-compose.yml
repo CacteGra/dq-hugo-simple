@@ -1,6 +1,6 @@
 services:
   caddy:
-    container_name: caddy
+    container_name: hugging_caddy
     image: ghcr.io/authp/authp:v1.0.1
     restart: unless-stopped
     ports:
@@ -18,7 +18,7 @@ services:
       websites:
 
   hugo:
-    container_name: hugo_blog
+    container_name: hugging_hugo_blog
     image: hugomods/hugo
     restart: unless-stopped
     ports:
@@ -34,4 +34,3 @@ services:
 networks:
   websites:
      driver: bridge
-     #external: true
