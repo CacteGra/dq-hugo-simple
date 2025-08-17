@@ -1,41 +1,43 @@
----
-title: "Easy simple Django Wagtail Docker Container"
-date: 2025-08-16
-draft: false
-tags: ["dev", "docker", "django"]
-categories: ["tutorials"]
-description: "How to dockerize a Wagtail site using PostGIS to create objects in location model."
----
 Here is a tutorial to to create a geospatial app using Wagtail (alongside Geodjango) and PostgreSQL extension PostGIS so that you can create objects using latitude/longitude coordinates or the map inside the admin site.
+
 Code and folder hierarchy [available on GitHub](https://github.com/CacteGra/wagtail-location-map-docker).
+
 Create a directory for the whole project:
   `mkdir mysite_whole`  
+  
 Create a virtual environment as no to pollute your local machine with version control issues, that way we can peacefully install Django locally.
   `virtualenv -p python3 venv`  
   We are making a virtual environment using *Python 3* which will be stored inside *venv* folder.  
   Let's activate it:  
   `source venv/bin/activate`  
+  
 Then we install Wagtail CMS, Django is also part of the installation process:
   `pip install wagtail`  
+  
 Create our Wagtail site's folder then let Wagtail generate the site:
 ```bash
   mkdir mysite
   wagtail start mysite mysite
 ```
+
 Install the dependencies making sure you already have everything to run Wagtail:
 ```bash
   cd mysite
   pip install -r requirements.txt
 ```
+
 Locally we may only need to use SQLite, at first anyway, so we need to match our models developed inside Django/Wagtail to our database. To do so, run the following command:
+id:: 68877b48-32a3-4b93-b6ef-87a3a10ae32a
   `python manage.py migrate`  
   This command will be extremely important as you make changes to your models and need to update your dev/production site running inside a Docker container so that restart the container, Django will know to make database migrations.  
+  
 Now onto creating an admin user so we can run, serve and manage our website:
   `python manage.py createsuperuser`  
   Enter a **username**, **email address** and **password**.  
   Launch your site:  
   `python manage.py runserver`  
   You can check it out at: http://127.0.0.1:8000/  
+  
 You website is functional albeit only locally.
 :logbook:
   CLOCK: [2025-08-04 Mon 10:18:05]
@@ -46,22 +48,30 @@ You website is functional albeit only locally.
   `docker build . -t mysite/backend`  
   Then we spin up the container and hook it on port 8000 so it is accessible through this port as specified in the Dockerfile.  
   `docker run -p 8001:8000 mysite/backend`  
+  
 In order to create a super user to log into the admin interface, you first need to know the ID of your wagtail container.
   `docker container ps`  
   Should display this table:  
+  
 | CONTAINER ID | IMAGE | COMMAND | CREATED | STATUS | PORTS | NAMES |
 |---|---|---|---|---|---|---|
 | container_id | easy_django_wagtail_test | "/bin/sh -c 'set -xe…" | 2 minutes ago | Up 2 minutes | 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp | random_name |
-  Then:  
-  `docker exec -it container_id python manage.py createsuperuser`  
-  Write your **username**, **email address** and **password**.  
-  To shut it off:  
-  `docker stop container_id`  
+
+Then:  
+`docker exec -it container_id python manage.py createsuperuser`  
+Write your **username**, **email address** and **password**.  
+To shut it off:  
+`docker stop container_id`  
+  
 We could use it as such, changing ports to match port 80; Let's Encrypt even has [six-day SSL certificates for IP addresses](https://letsencrypt.org/2025/01/16/6-day-and-ip-certs/).
+
 For a better running Wagtail install, we are going to add a few modifications to our project. We will use Caddy to serve our site through a reverse proxy and get a SSL certificate for our domain with Let's Encrypt in a future article. Right now we are looking to run the overall project with a **Docker Compose** instance, so that database migrations to follow model changes and local tests can easily be done using our local virtual environment and *python manage.py* commands.
+
 ## Running the project with Docker Compose
+
 An entrypoint will help us move from a dev to a production setting, inside **mysite/**:
   `nano docker-entrypoint.sh`  
+  
 ```bash
   #!/bin/sh
   # docker-entrypoint.sh
@@ -83,13 +93,16 @@ An entrypoint will help us move from a dev to a production setting, inside **mys
   Add the command to your **Dockerfile**:  
   `ENTRYPOINT ["./docker-entrypoint.sh"]`  
   And remove commands now deemed unnecessary:  
+  
 ```Dockerfile
   RUN python manage.py collectstatic --noinput --clear
   # And
   CMD set -xe; python manage.py migrate --noinput; gunicorn mysite.wsgi:application
 ```
+
 We create a **start.sh** file that will run our project in production setting when needed; to do so, the executable will replace our base **manage.py** and **wsgi.py** with **manage.production.py** which will tell Django to use **mysite/mysite/production.py** and **wsgi.production.py** respectively. For now though, we'll set **manage.production.py** as *.pynone extensions so as not to trigger the boolean condition to set our environment as production.
   **start.sh**  
+  
 ```bash
   FILE=manage.production.py
   if test -f "$FILE"; then
@@ -103,6 +116,7 @@ We create a **start.sh** file that will run our project in production setting wh
   gunicorn mysite.wsgi:application
 ```
   Then create **manage.production.pynone**:  
+  
 ```python
   #!/usr/bin/env python
   import os
@@ -116,6 +130,7 @@ We create a **start.sh** file that will run our project in production setting wh
       execute_from_command_line(sys.argv)
 ```
   And finally **mysite/wsgi.production.py**:  
+  
 ```python
   """
   WSGI config for trashitcd  project.
@@ -134,6 +149,7 @@ We create a **start.sh** file that will run our project in production setting wh
   
   application = get_wsgi_application()
 ```
+
 Create a **docker-compose.yml** file in the root directory **mysite_whole** of your install:
 ```docker-compose
   services:
@@ -166,17 +182,22 @@ Create a **docker-compose.yml** file in the root directory **mysite_whole** of y
         driver: local
   
 ```
+
 Build your Dockerfile project:
   `docker build . -t mysite/backend`  
   And then launch Docker Compose with:  
   `docker compose up`  
   You will have to recreate your **admin login** this time using Docker Compose:  
   `docker compose exec backend python manage.py createsuperuser`  
+  
 Go to `127.0.0.1:8001`, login, then Snippets and add a location object and you either enter latitude/longitude coordinates or drag the pin to the desired location.
+
 ## Using Postgres-based Postgis geospatial database
+
 We are going ahead with preparing our site to use a geospatial database: **PostGIS**.
   First, inside Dockerfile make a few changes:  
   `nano Dockerfile`  
+  
 Add the following to system packages:
 ```Dockerfile
       gdal-bin \
@@ -184,6 +205,7 @@ Add the following to system packages:
       python3-gdal \
 ```
   So Dockerfile should look like this:  
+  
 ```dockerfile
   # Use an official Python runtime based on Debian 12 "bookworm" as a parent image.
   FROM python:3.12-slim-bookworm
@@ -237,11 +259,13 @@ Add the following to system packages:
   
   ENTRYPOINT ["./docker-entrypoint.sh"]             # must be JSON-array syntax
 ```
+
 It is also necessary to add *psycopg2* module to **requirements.txt** which has been created during our initial wagtail site install in order to use the PostGIS database. We take this opportunity to add **wagtaileowidget**, will help us display a map field when managing objects inside the admin site:
 ```txt
   psycopg2
   wagtailgeowidget==8.2.1
 ```
+
 In the file **mysite/mysite/settings/base.py**, add modules *django.contrib.gis* and *wagtailgeowidget* to **INSTALLED_APPS** so it should look like this:
 ```python
   INSTALLED_APPS = [
@@ -271,6 +295,7 @@ In the file **mysite/mysite/settings/base.py**, add modules *django.contrib.gis*
       "wagtailgeowidget",
   ]
 ```
+
 Inside **mysite/mysite/settings/dev.py**, tell Django/Wagtail set the default database parameters as environment variables to switch between SQLite and PostgreSQL databases. We also include Wagtail admin base url:
 ```python
   from .base import *
@@ -304,8 +329,10 @@ Inside **mysite/mysite/settings/dev.py**, tell Django/Wagtail set the default da
       pass
   
 ```
+
 We need to create a file for our backend service to wait for the database to be ready, *wait-for-it.sh*, then start it by executing *start.sh*.
   **wait-for-it.sh**  
+  
 ```bash
   #!/usr/bin/env bash
   # Use this script to test if a given TCP host/port are available
@@ -492,6 +519,7 @@ We need to create a file for our backend service to wait for the database to be 
 ```
   Again, make the file executable:  
   `chmod +x wait-for-it.sh`  
+  
 Now we prepare **docker-compose.yaml**, adding our Postgres database service, and filling in environment variables used both by PostgrSQL/PostGIS and Django/Wagtail. We'll later see that environment variables set in an **.env** file will take precedence over the default ones when setting up our project to be production-ready.
 ```docker-compose
   services:
@@ -540,13 +568,17 @@ Now we prepare **docker-compose.yaml**, adding our Postgres database service, an
       private:
         driver: local
 ```
+
 Rebuild mysite:
   `docker build . -t mysite/backend`  
   Then launch the Docker Compose instance to test out the configuration and PostgreSQL:  
   `docker compose up`  
+  
 Open another terminal and create your super user for this container's Wagtail using Docker Compose:
   `docker compose exec backend python manage.py createsuperuser`  
+  
 ## Creating a location-based admin map
+
 In order to test our geospatial database, we are going to create our first model that includes a point field and create a point object in the admin site.
   To do so, we create a new application using:  
   `python manage.py startapp maps`  
@@ -554,6 +586,7 @@ In order to test our geospatial database, we are going to create our first model
   `    "maps",`  
   Inside **mysite/maps/** you should find a **models.py** file, this is where we declare our database schema.  
   `nano mysite/maps/models.py`  
+  
 ```python
   # Replace from django.db import models with the next line
   # so that we use geodjango models
@@ -565,11 +598,14 @@ In order to test our geospatial database, we are going to create our first model
       location_name = models.CharField(max_length=50)
       location = models.PointField(srid=4326)
 ```
+
 Here is when making modifications to your database models you should not forget to migrate the changes and apply them.
   `python manage.py migrate && python manage.py makemigrations`  
+  
 Wagtail is primarily on being CMS to provide a better interface and workflow than basic Django. Therefore we need to tell our site we are going to use our own models in the admin interface.
   Create a file *wagtail_hooks.py* right beside **models.py** inside our maps app folder:  
   `nano wagtail_hooks.py`  
+  
 ```python
   from wagtail.snippets.models import register_snippet
   from wagtail.snippets.views.snippets import SnippetViewSet
@@ -590,3 +626,5 @@ Wagtail is primarily on being CMS to provide a better interface and workflow tha
       
   register_snippet(LocationTemplate)
 ```
+
+Go to `127.0.0.1:8001`, login, then Snippets and add a location object and you either enter latitude/longitude coordinates or drag the pin to the desired location.
