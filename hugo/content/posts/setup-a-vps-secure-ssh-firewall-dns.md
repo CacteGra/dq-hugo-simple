@@ -70,8 +70,8 @@ IPV6=yes
 ```
 Verify that hosts contains this configuration, editing */etc/hosts*:
 ```
-127.0.1.1 machine_name
 127.0.0.1 localhost.localdomain localhost machine_name
+127.0.1.1 machine_name
 ```
 Then `/etc/hostname`:
 `machine_name`
