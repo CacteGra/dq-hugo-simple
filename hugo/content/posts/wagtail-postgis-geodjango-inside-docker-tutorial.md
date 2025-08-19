@@ -1,3 +1,11 @@
+---
+title: "Easy simple Django Wagtail Docker Container"
+date: 2025-08-16
+draft: false
+tags: ["dev", "docker", "django", "wagtail", "postgresql"]
+categories: ["tutorials"]
+description: "Creating a geospatial database and using it with Django/Wagtail."
+---
 Here is a tutorial to to create a geospatial app using Wagtail (alongside Geodjango) and PostgreSQL extension PostGIS so that you can create objects using latitude/longitude coordinates or the map inside the admin site.
 
 Code and folder hierarchy [available on GitHub](https://github.com/CacteGra/wagtail-location-map-docker).
