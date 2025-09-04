@@ -274,6 +274,17 @@ It is also necessary to add *psycopg2* module to **requirements.txt** which has 
   wagtailgeowidget==8.2.1
 ```
 
+In order to install future PiP packages we need to comment **Psycopg** so that it doesn't bother us when we install packages specified in **requirements.txt** in our virtual environment for migrations as we use SQLite locally. 
+Copy your **requirements.txt** to **requirements-local.txt** and comment **psycopg2** line like so:
+```
+Django>=5.2,<5.3
+wagtail>=7.0,<7.1
+#psycopg2
+wagtailgeowidget==8.2.1
+```
+Then all you need to do is install requirements using:
+`pip install -r requirements-local.txt`
+
 In the file **mysite/mysite/settings/base.py**, add modules *django.contrib.gis* and *wagtailgeowidget* to **INSTALLED_APPS** so it should look like this:
 ```python
   INSTALLED_APPS = [
@@ -636,3 +647,5 @@ Wagtail is primarily on being CMS to provide a better interface and workflow tha
 ```
 
 Go to `127.0.0.1:8001`, login, then Snippets and add a location object and you either enter latitude/longitude coordinates or drag the pin to the desired location.
+
+A word of caution, a local GDAL is still necessary in order to migrate models (`python manage.py makemigrations`).
