@@ -14,6 +14,7 @@ services:
       - ./caddy/static:/srv
       - ./caddy/config:/config
       - ./caddy/data:/data
+      - ./casing:/www/html
     networks:
       websites:
 

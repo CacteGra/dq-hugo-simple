@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase - Frontend & Backend</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a1a2e;
+            --light: #eee;
+            --text: #333;
+            --glass: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: white;
+            padding: 5rem 0;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+        }
+
+        /* Skill icon styles */
+        .frontend-icon::before {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 8px;
+        }
+
+        .javascript-icon::before {
+            background: linear-gradient(45deg, #48cae4, #0077b6);
+            border-radius: 50%;
+        }
+
+        .backend-icon::before {
+            background: linear-gradient(45deg, #06d6a0, #118ab2);
+            border-radius: 5px;
+            transform: rotate(45deg);
+        }
+
+        .responsive-icon::before {
+            background: linear-gradient(45deg, #f72585, #b5179e);
+            border-radius: 3px;
+            width: 35px;
+            height: 20px;
+        }
+
+        .responsive-icon::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .skill-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .skill-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 5rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image.dashboard::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.animation::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.9);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 2s linear infinite;
+        }
+
+        .portfolio-image.ecommerce::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.ecommerce::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.9);
+            border-radius: 4px;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.api::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 4px;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.api::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 4px;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.game::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 35px;
+            border: 4px solid rgba(255,255,255,0.9);
+            border-radius: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .portfolio-image.mobile::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.9);
+            border-radius: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image::before {
+            left: 100%;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-category {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .portfolio-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .portfolio-link {
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-link.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .portfolio-link.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .portfolio-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-links {
+                flex-direction: column;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Floating particles effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Matthieu Brion</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Matthieu Brion - Full Stack Developer</h1>
+            <p>Transforming innovative ideas into powerful digital experiences. Specialising in modern web technologies with 2+ years of experience building scalable applications for startups and local businesses.</p>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon frontend-icon"></div>
+                    <h3>Frontend Development</h3>
+                    <p>Creating responsive, interactive user interfaces with HTML5, CSS3, and modern JavaScript frameworks. Focus on performance and user experience.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon javascript-icon"></div>
+                    <h3>JavaScript & ES6+</h3>
+                    <p>Advanced JavaScript programming with modern syntax, async/await, modules, and DOM manipulation for dynamic web applications.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon backend-icon"></div>
+                    <h3>Django Backend</h3>
+                    <p>Building robust web applications with Django, including REST APIs, database design, authentication, and deployment strategies.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon responsive-icon"></div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach ensuring seamless experience across all devices using CSS Grid, Flexbox, and modern layout techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="portfolio-grid">
+                <!-- Frontend Projects -->
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image dashboard"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Frontend</div>
+                        <h3 class="portfolio-title">TrashIt Waste Management Web App</h3>
+                        <p class="portfolio-description">Solution featuring local data (custom CSV/JSON/KML API adapters), admin dashboard for data matching & filtering, and public service coordination. Includes OSM data collection, bot-filtered user requests, and email reporting.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Leaflet+OSM</span>
+                            <span class="tech-tag">Django</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="https://trashit.click" class="portfolio-link primary">Live Demo</a>
+                            <a href="https://github.com/CacteGra/trashit" class="portfolio-link secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image animation"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Frontend</div>
+                        <p class="portfolio-description">Rising Yoga studio giving Yin and Yatha classes. online booking and startup pack popups.</p>
+                        <h3 class="portfolio-title">Yoga Bliss</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Wordpress</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="https://yogabliss.fr" class="portfolio-link primary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image ecommerce"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Full Stack</div>
+                        <h3 class="portfolio-title">E-commerce Website</h3>
+                        <p class="portfolio-description">Marketplace connecting local artisans with customers. Features user authentication, payment processing with Stripe, inventory management, and seller dashboards.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link primary">Live Demo</a>
+                            <a href="#" class="portfolio-link secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image api"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Backend</div>
+                        <h3 class="portfolio-title">HealthTracker API</h3>
+                        <p class="portfolio-description">RESTful API for fitness applications managing user health data, workout routines, and progress tracking with JWT authentication, rate limiting, and comprehensive API documentation.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Django REST</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Swagger</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link primary">API Docs</a>
+                            <a href="#" class="portfolio-link secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image game"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">JavaScript</div>
+                        <h3 class="portfolio-title">Rogue-like Game TBD</h3>
+                        <p class="portfolio-description">Browser-based RPG exploration game with procedurally generated levels, physics-based movement, and dynamic audio system using Web Audio API.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Canvas API</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Web Audio</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link primary">Play Game</a>
+                            <a href="#" class="portfolio-link secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image mobile"></div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Responsive</div>
+                        <h3 class="portfolio-title">KanMind</h3>
+                        <p class="portfolio-description">Kanboard styled web app featuring draggable tasks, interconnected mutli-boards and persistent storage.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">Flexbox</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Django</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="https://kanmind.digitalquint.click" class="portfolio-link primary">Live Demo</a>
+                            <a href="https://github.com/CacteGra/kanmind" class="portfolio-link secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Let's Collaborate on Your Next Project</h3>
+                <p>From startup MVPs to enterprise solutions, I bring technical expertise and creative problem-solving to every project. Currently available for new opportunities.</p>
+                <div class="social-links">
+                    <a href="mailto:gracacte@proton.me" class="social-link">Email</a>
+                    <a href="https://linkedin.com/in/matthieubrion" class="social-link">LinkedIn</a>
+                    <a href="https://cactegra.medium.com/" class="social-link">Medium</a>
+                    <a href="https://github.com/cactegra" class="social-link">GitHub</a>
+                </div>
+                <p>&copy; 2025 Matthieu Brion. Built with Django, HTML5, CSS3 & JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add hover effects to portfolio cards
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize animations and effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            // Add stagger animation to skills cards
+            const skillCards = document.querySelectorAll('.skill-card');
+            skillCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Add stagger animation to portfolio cards
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+            portfolioCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Dynamic background color change on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const hue = 240 + (scrollPercent * 60); // Changes from blue to purple
+            document.documentElement.style.setProperty('--primary', `hsl(${hue}, 70%, 60%)`);
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero h1');
+            const originalText = heroTitle.textContent;
+            typeWriter(heroTitle, originalText, 50);
+        }, 500);
+    </script>
+</body>
+</html>
