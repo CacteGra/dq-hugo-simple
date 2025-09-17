@@ -12,7 +12,7 @@ description: "Using Caddy to its full potential serving files and subdomains."
 ## Adapting your Docker Compose installation:
 
 Under volumes, add volume you wish Docker to copy to the container so that section should look like this:
-  ```
+  ```docker compose
       volumes:
         - ./caddy/Caddyfile:/etc/caddy/Caddyfile
         - ./caddy/static:/srv
