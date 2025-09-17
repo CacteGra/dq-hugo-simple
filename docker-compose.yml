@@ -9,6 +9,7 @@ services:
       - "443:443/udp"
     environment:
       - DOMAIN_NAME
+      - DOMAIN_NAME_CASING
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/static:/srv
