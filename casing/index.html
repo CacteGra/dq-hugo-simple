@@ -12,9 +12,9 @@
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
+            --primary: #1d2598;
+            --secondary: #1d2598;
+            --accent: #6c60f8;
             --dark: #1a1a2e;
             --light: #eee;
             --text: #333;
@@ -271,12 +271,12 @@
             content: '';
             position: absolute;
             width: 60px;
-            height: 40px;
-            background: rgba(255,255,255,0.9);
+            height: 59px;
             border-radius: 8px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+	    background-image: url('webapp.png');
         }
 
         .portfolio-image.animation::before {
@@ -355,13 +355,13 @@
         .portfolio-image.mobile::before {
             content: '';
             position: absolute;
-            width: 30px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.9);
+            width: 60px;
+            height: 60px;
             border-radius: 8px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+	    background-image: url('kanmind.png');
         }
 
         @keyframes spin {
@@ -383,6 +383,27 @@
         .portfolio-card:hover .portfolio-image::before {
             left: 100%;
         }
+
+	.webapp {
+	    background-image: url('showcase-webapp.png');
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	}
+
+	.fitness {
+	    background-image: url('showcase-fitness.png');
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	}
+
+	.kanmind {
+	    background-image: url('showcase-kanmind.png');
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	}
 
         .portfolio-content {
             padding: 2rem;
@@ -615,17 +636,23 @@
             <h2 class="section-title fade-in">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card fade-in">
-                    <div class="skill-icon frontend-icon"></div>
+                    <div class="skill-icon frontend-icon">
+			<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:url(#linear-gradient-4);}.cls-5{fill:url(#linear-gradient-5);}.cls-6{fill:url(#linear-gradient-6);}.cls-7{fill:url(#linear-gradient-7);}.cls-8{fill:url(#linear-gradient-8);}.cls-9{fill:url(#linear-gradient-9);}.cls-10{fill:url(#linear-gradient-10);}.cls-11{fill:url(#linear-gradient-11);}.cls-12{fill:url(#linear-gradient-12);}.cls-13{fill:url(#linear-gradient-13);}.cls-14{fill:url(#linear-gradient-14);}.cls-15{fill:url(#linear-gradient-15);}.cls-16{fill:url(#linear-gradient-16);}.cls-17{fill:url(#linear-gradient-17);}.cls-18{fill:url(#linear-gradient-18);}.cls-19{fill:url(#linear-gradient-19);}.cls-20{fill:url(#linear-gradient-20);}.cls-21{fill:url(#linear-gradient-21);}.cls-22{fill:url(#linear-gradient-22);}.cls-23{fill:url(#linear-gradient-23);}.cls-24{fill:url(#linear-gradient-24);}.cls-25{fill:url(#linear-gradient-25);}.cls-26{fill:url(#linear-gradient-26);}.cls-27{fill:url(#linear-gradient-27);}.cls-28{fill:url(#linear-gradient-28);}.cls-29{fill:url(#linear-gradient-29);}.cls-30{fill:url(#linear-gradient-30);}.cls-31{fill:url(#linear-gradient-31);}.cls-32{fill:url(#linear-gradient-32);}.cls-33{fill:url(#linear-gradient-33);}.cls-34{fill:url(#linear-gradient-34);}</style><linearGradient id="linear-gradient" x1="24" y1="46.19" x2="24" y2="32.75" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#273a9b"/><stop offset="0.56" stop-color="#202f65"/><stop offset="1" stop-color="#021e2f"/></linearGradient><linearGradient id="linear-gradient-2" y1="44.92" y2="37.96" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-3" x1="24" y1="40.17" x2="24" y2="6.92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f3c57a"/><stop offset="0.49" stop-color="#f39369"/><stop offset="1" stop-color="#e94867"/></linearGradient><linearGradient id="linear-gradient-4" y1="38.45" x2="24" y2="17.6" xlink:href="#linear-gradient-3"/><linearGradient id="linear-gradient-5" y1="38.08" y2="19.28" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-6" x1="24" y1="34.98" x2="24" y2="28.95" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0.52" stop-color="#cce2e6"/><stop offset="1" stop-color="#8fa1bb"/></linearGradient><linearGradient id="linear-gradient-7" x1="18.88" y1="37.41" x2="18.88" y2="1.52" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-8" x1="-431.89" y1="37.41" x2="-431.89" y2="1.52" gradientTransform="matrix(-1, 0, 0, 1, -402.77, 0)" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-9" x1="24" y1="42.35" x2="24" y2="-14.68" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#27e9de"/><stop offset="0.52" stop-color="#03a4ec"/><stop offset="1" stop-color="#2547a8"/></linearGradient><linearGradient id="linear-gradient-10" x1="24" y1="36.87" x2="24" y2="8.41" xlink:href="#linear-gradient-9"/><linearGradient id="linear-gradient-11" x1="24" y1="18.21" x2="24" y2="4.35" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-12" x1="24" y1="11.72" x2="24" y2="8.77" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-13" x1="13.79" y1="8.08" x2="38.51" y2="9.88" xlink:href="#linear-gradient-9"/><linearGradient id="linear-gradient-14" x1="13.88" y1="6.8" x2="38.6" y2="8.6" xlink:href="#linear-gradient-9"/><linearGradient id="linear-gradient-15" x1="13.69" y1="9.43" x2="38.41" y2="11.23" xlink:href="#linear-gradient-9"/><linearGradient id="linear-gradient-16" y1="39.67" y2="-1.14" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-17" x1="6.19" y1="34.8" x2="6.19" y2="23.64" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-18" x1="10.18" y1="34.03" x2="10.18" y2="27.64" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-19" x1="13.4" y1="34.05" x2="13.4" y2="27.51" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-20" x1="13.7" y1="33.67" x2="13.7" y2="29.53" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-21" x1="19.28" y1="33.91" x2="19.28" y2="28.25" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-22" x1="10.08" y1="28.46" x2="10.08" y2="16.05" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-23" x1="12.54" y1="29.11" x2="12.54" y2="22.91" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-24" x1="8.65" y1="28.21" x2="8.65" y2="24.16" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-25" x1="13.25" y1="24.19" x2="13.25" y2="21.93" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-26" x1="639.19" y1="34.8" x2="639.19" y2="23.64" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-27" x1="643.18" y1="34.03" x2="643.18" y2="27.64" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-28" x1="646.4" y1="34.05" x2="646.4" y2="27.51" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-29" x1="646.7" y1="33.67" x2="646.7" y2="29.53" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-30" x1="652.28" y1="33.91" x2="652.28" y2="28.25" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-31" x1="643.08" y1="28.46" x2="643.08" y2="16.05" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-32" x1="645.54" y1="29.11" x2="645.54" y2="22.91" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-33" x1="641.65" y1="28.21" x2="641.65" y2="24.16" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/><linearGradient id="linear-gradient-34" x1="646.25" y1="24.19" x2="646.25" y2="21.93" gradientTransform="matrix(-1, 0, 0, 1, 681, 0)" xlink:href="#linear-gradient-6"/></defs><title>rocket, startup, monitor, screen, computer</title><path class="cls-1" d="M30,42h0a1.5,1.5,0,0,1-1.5-1.5V35.38h-9V40.5A1.5,1.5,0,0,1,18,42h0a1.5,1.5,0,0,0,0,3H30a1.5,1.5,0,0,0,0-3Z"/><rect class="cls-2" x="19.5" y="36.5" width="9" height="4"/><path class="cls-3" d="M5.4,9H42.6A2.4,2.4,0,0,1,45,11.4V36.6A1.4,1.4,0,0,1,43.6,38H5.4A2.4,2.4,0,0,1,3,35.6V11.4A2.4,2.4,0,0,1,5.4,9Z"/><rect class="cls-4" x="17.62" y="16.83" width="12.76" height="16.17"/><path class="cls-5" d="M3,33v3.6A2.4,2.4,0,0,0,5.4,39H42.6A2.4,2.4,0,0,0,45,36.6V33Z"/><path class="cls-6" d="M26.36,30.64h-.19a1,1,0,0,1-1.09-1V28H22.92v1.65a1,1,0,0,1-1.09,1h-.19A2.36,2.36,0,0,0,19.28,33h9.45A2.36,2.36,0,0,0,26.36,30.64Z"/><path class="cls-7" d="M20.24,23.29,17.45,24.8a4,4,0,0,0-2,2.51l-.09.34a.83.83,0,0,0,1.27.9l.88-.59a2.11,2.11,0,0,1,1.17-.35H22.4"/><path class="cls-8" d="M27.76,23.29l2.79,1.51a4,4,0,0,1,2,2.51l.09.34a.83.83,0,0,1-1.27.9L30.45,28a2.11,2.11,0,0,0-1.17-.35H25.6"/><path class="cls-9" d="M24.52,3.18a.85.85,0,0,0-1,0C20,5.91,17.62,10.91,17.62,16.64a18,18,0,0,0,4,11.72.88.88,0,0,0,.64.3l1.69,0,1.69,0a.88.88,0,0,0,.64-.3,18,18,0,0,0,4-11.72C30.38,10.91,28,5.91,24.52,3.18Z"/><path class="cls-10" d="M26.7,14.13H21.3V27.89c.12.15.24.32.36.47a.88.88,0,0,0,.64.3l1.69,0,1.69,0a.88.88,0,0,0,.64-.3c.13-.15.24-.31.36-.47Z"/><circle class="cls-11" cx="24" cy="14.13" r="2.7"/><circle class="cls-12" cx="24" cy="14.12" r="1.62"/><circle class="cls-13" cx="20.99" cy="8.61" r="0.66"/><circle class="cls-14" cx="21.68" cy="7.37" r="0.38"/><circle class="cls-15" cx="20.33" cy="9.91" r="0.1"/><path class="cls-16" d="M24,29.76h0a1.21,1.21,0,0,1-1.2-1.07l-.4-3.4a1.5,1.5,0,0,1,1.49-1.68h.22A1.5,1.5,0,0,1,25.6,25.3l-.4,3.4A1.21,1.21,0,0,1,24,29.76Z"/><path class="cls-17" d="M3,33H9.37A6.37,6.37,0,0,0,3,26.63Z"/><path class="cls-18" d="M6.54,33a3.65,3.65,0,1,1,7.3,0"/><path class="cls-19" d="M9.67,33a3.74,3.74,0,1,1,7.47,0"/><path class="cls-20" d="M11.34,33a2.36,2.36,0,0,1,4.72,0"/><path class="cls-21" d="M16,33a3.24,3.24,0,1,1,6.47,0"/><circle class="cls-22" cx="10.08" cy="24.37" r="1.08"/><circle class="cls-23" cx="12.54" cy="27.07" r="0.54"/><circle class="cls-24" cx="8.65" cy="26.88" r="0.35"/><circle class="cls-25" cx="13.25" cy="23.45" r="0.2"/><path class="cls-26" d="M45,33H38.63A6.37,6.37,0,0,1,45,26.63Z"/><path class="cls-27" d="M41.46,33a3.65,3.65,0,1,0-7.3,0"/><path class="cls-28" d="M38.33,33a3.74,3.74,0,1,0-7.47,0"/><path class="cls-29" d="M36.66,33a2.36,2.36,0,0,0-4.72,0"/><path class="cls-30" d="M32,33a3.24,3.24,0,1,0-6.47,0"/><circle class="cls-31" cx="37.92" cy="24.37" r="1.08"/><circle class="cls-32" cx="35.46" cy="27.07" r="0.54"/><circle class="cls-33" cx="39.35" cy="26.88" r="0.35"/><circle class="cls-34" cx="34.75" cy="23.45" r="0.2"/></svg>
+		    </div>
                     <h3>Frontend Development</h3>
                     <p>Creating responsive, interactive user interfaces with HTML5, CSS3, and modern JavaScript frameworks. Focus on performance and user experience.</p>
                 </div>
                 <div class="skill-card fade-in">
-                    <div class="skill-icon javascript-icon"></div>
+                    <div class="skill-icon javascript-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#f6b445;}.cls-2{fill:#fed049;}.cls-3{fill:none;stroke:#474c54;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title>6-File-Code</title><g id="_6-File-Code" data-name="6-File-Code"><g id="_Group_" data-name="&lt;Group&gt;"><path class="cls-1" d="M43,14H34a4,4,0,0,1-4-4V1Z"/><path class="cls-2" d="M43,14V43a4,4,0,0,1-4,4H9s-4,0-4-4V5A4,4,0,0,1,9,1H30v9a4,4,0,0,0,4,4Z"/><path class="cls-3" d="M43,14H34a4,4,0,0,1-4-4V7"/><path class="cls-3" d="M43,14V43a4,4,0,0,1-4,4H9s-4,0-4-4V5A4,4,0,0,1,9,1H30Z"/><polyline class="cls-3" points="11 26 14 23 11 20"/><line class="cls-3" x1="17" y1="26" x2="21" y2="26"/></g></g></svg>
+		    </div>
                     <h3>JavaScript & ES6+</h3>
                     <p>Advanced JavaScript programming with modern syntax, async/await, modules, and DOM manipulation for dynamic web applications.</p>
                 </div>
                 <div class="skill-card fade-in">
-                    <div class="skill-icon backend-icon"></div>
+                    <div class="skill-icon backend-icon">
+			<svg width="48" height="48" viewBox="0 0 256 326" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet"><g fill="#2BA977"><path d="M114.784 0h53.278v244.191c-27.29 5.162-47.38 7.193-69.117 7.193C33.873 251.316 0 222.245 0 166.412c0-53.795 35.93-88.708 91.608-88.708 8.64 0 15.222.68 23.176 2.717V0zm1.867 124.427c-6.24-2.038-11.382-2.717-17.965-2.717-26.947 0-42.512 16.437-42.512 45.243 0 28.046 14.88 43.532 42.17 43.532 5.896 0 10.696-.332 18.307-1.351v-84.707z"/><path d="M255.187 84.26v122.263c0 42.105-3.154 62.353-12.411 79.81-8.64 16.783-20.022 27.366-43.541 39.055l-49.438-23.297c23.519-10.93 34.901-20.588 42.17-35.327 7.61-15.072 10.01-32.529 10.01-78.445V84.261h53.21zM196.608 0h53.278v54.135h-53.278V0z"/></g></svg>
+		    </div>
                     <h3>Django Backend</h3>
                     <p>Building robust web applications with Django, including REST APIs, database design, authentication, and deployment strategies.</p>
                 </div>
@@ -645,7 +672,7 @@
             <div class="portfolio-grid">
                 <!-- Frontend Projects -->
                 <div class="portfolio-card fade-in">
-                    <div class="portfolio-image dashboard"></div>
+                    <div class="portfolio-image dashboard webapp"></div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Frontend</div>
                         <h3 class="portfolio-title">TrashIt Waste Management Web App</h3>
@@ -665,7 +692,8 @@
                 </div>
 
                 <div class="portfolio-card fade-in">
-                    <div class="portfolio-image animation"></div>
+                    <div class="portfolio-image animation fitness">
+		    </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Frontend</div>
                         <p class="portfolio-description">Rising Yoga studio giving Yin and Yatha classes. online booking and startup pack popups.</p>
@@ -681,7 +709,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-in">
+                <!-- <div class="portfolio-card fade-in">
                     <div class="portfolio-image ecommerce"></div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Full Stack</div>
@@ -719,7 +747,7 @@
                             <a href="#" class="portfolio-link secondary">Source Code</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="portfolio-card fade-in">
                     <div class="portfolio-image game"></div>
@@ -734,15 +762,15 @@
                             <span class="tech-tag">Web Audio</span>
                             <span class="tech-tag">Socket.io</span>
                         </div>
-                        <div class="portfolio-links">
+                        <!-- <div class="portfolio-links">
                             <a href="#" class="portfolio-link primary">Play Game</a>
                             <a href="#" class="portfolio-link secondary">Source Code</a>
-                        </div>
+			</div> -->
                     </div>
                 </div>
 
                 <div class="portfolio-card fade-in">
-                    <div class="portfolio-image mobile"></div>
+                    <div class="portfolio-image mobile kanmind"></div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Responsive</div>
                         <h3 class="portfolio-title">KanMind</h3>
@@ -771,12 +799,55 @@
                 <h3>Let's Collaborate on Your Next Project</h3>
                 <p>From startup MVPs to enterprise solutions, I bring technical expertise and creative problem-solving to every project. Currently available for new opportunities.</p>
                 <div class="social-links">
-                    <a href="mailto:gracacte@proton.me" class="social-link">Email</a>
-                    <a href="https://linkedin.com/in/matthieubrion" class="social-link">LinkedIn</a>
-                    <a href="https://cactegra.medium.com/" class="social-link">Medium</a>
-                    <a href="https://github.com/cactegra" class="social-link">GitHub</a>
+                    <a href="mailto:gracacte@proton.me" class="social-link">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="109" height="78" viewBox="0 0 109 78">
+  <image id="email" width="109" height="78" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABOCAYAAAAqwJjOAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAARl0lEQVR42u2deVxUVf/H3/fODMwwAwxrIIp7WRZuqWlqmT5qmmUiCEijT24I7tZj1uux7FcWCuICIopEiGaWtthi26P+2tR6VDK3LFGTMFRQQVmGmfn9Yfjjzh2VZYbB5P2P8rn3nnvP+czce+73fM8Zgetg8I4WgYeAMUBfIAjQ0oQjsABXgNPAf4D1WYXZ315vZ8GWaPCOHgEkc9WoJpxDLvB0VmH2DusNEtMM3tEK4E2ufruaaBwkZhVmP1NdEK12eJsmwxobcwze0cuqC9e+aQbv6FggxfqI4Pta0mNET1p1bo1XM2807hpEpViDczVRE0xGE6WXrlBSWMLvB3/nx617OPrtEVu7jsgqzP4A/jLN4B3tBhQCrtX3Cl8QycCJ/3B2vW479n+2jzVT0jCWVVSX84E2WYXZZVVfmXlYGQaw/Y2vuHT2krPrcNvReXAXxiaOs5YDgWcABIN3tAdwCvC0VUBQhyBmv/Mv3H3cnV2X24qy8kpeG7yA/F/yqssXgWARCOM6hgHkHckj2bCU0kulzq7HbUNFpZlKi8DYlTGICkn/wRMIE4Gh1VWtt+5brZdOUkjuvlxWGJZSUVpx0xM2UTcqjZUAVFRaqKi0AODfJoDOw7pb7zpUBLpVV3pFPnR8SvZs1DqNZM9f9xwjZdzya4U3YR8KThTwUv9/E9tyEsvGJHHlcrlke8iQrtaHdBOB4OpKh34dXZrd3YLJWbNwcZP2TQ5/fYi0CSsxV5qdXde/BedPnydhZDx/HL363Dq4/QA52/ZK9glo38z6sGARq6iITws/C0DLzq0Zv2YqKrVKckTOF/vJmJGO2dRkXH0oyi9iSfhiLpwpkuiCKI0s6uQdQEGUK4Kl6v/te3VgbEoMCqVCss+e93ax/rl1WCwWmqg9lwoukhAaz9kTBRK99f3tCBksvR1amwjyMJaMe/qH8NSKSbKDv16/k00vbnR2/W85is8XkxSRIDMsuFNrJq6djtJFedMyahSPChnclajE8QiC1Liv0r/g/fgtzm6HW4YrFy+zJGwReUck7140vzeYmKxZqN01NSqnxkHEbk/0JPTlKJn+ybKP2Jb8ibPbo9FTeqmUZVFLZIYF3hnEpMyZNTYMamEaQO8xD/P482EyfcvCd9n55nZnt0ujpfxyOUsjE8jdlyvR/dsGMGXDHHTetYs21Tpc//CEQQyZ+bhMXz9vHd9v+ra2xf3tqSitIHncMplhPsF+xKybXWvDoA6mAQyaPpxHYobI9MzZGfz44Q/ObqdGg7HcyArDUtlQi1eQD3Ebn0Uf4FWncus8MDbs2ZH0HvOQRLOYLaydtpqcL/Y7u72cTqWxktWTUmWGeQbomZI9u86GQT1MEwSB0JfHcP/IXhLdZDSxevIqjnxz2MnN5jzMlWbSJqyUfXjd/TyJe+tZfFv616v8eg1BC4JARPw4Og+7X6IbyypIHruM3L3HndNqTsRsMpMxI11mmNZLR0zWrHobBvU0DUBUiIxZMp6OAzpJ9IrSCpIiE/n94KmGbTUnYjFbyJiezp73dkl0jacbsRueIfAu+yS32SXZQ6FSYlgxmbYP3CXRy4pLSRqdQP4vfzRQszkPi8XChufXyQxT69RMemOm3QwDO5kGoFKrmLh2OsGdW0v0ksISkiISKbAK2/ydsFgsbJi3jp1ZOyS6i8aVyVmzaWnVJvXFrmlVLhoXYt6cRbOOktEeLpwpYmlEAkX5RXUsuXHz3sLNMsNUahXj06fa3TCws2kAancNMW/OxL9doEQ/d+ociaMWUXy+2O6VcCZbXn2XbSnSMJ7CRcmEtdNp36uDQ84pApKBMZWrqt4DZTpvd2Kz56Bv7ivRC3L/ZEnYIq5cvOyQyjQ0n674WGaYqFQwLjnGYYbBVdO2Vvv7S42nm13yCTz8PZm+6V/o/KQ5Q3lH8lgWteSWTxTalvwJ7722WaIJosg/V06h48BOdSy1ZojAaGA8MBl4wp6F6wO8mLrxWdx8PCR67r5cVo5fccsmCu18cztbFr4r0QRRIGLxPx1uGNiYNXPuQmkmMNaeJ/n90ClSxyyhzOq22LH/fcRlTkOpuvnAX2Nh55vbWT9vnUwfnfA0Pa2iQ/ag9NIVXug8Q6IpDd7RSmAUoALecURFW9wTzNNrp7HGkITxyv9nGx3cfoDVk1cRsybWOr+vUbJ7yy6bhg2fH+EQw66HCGQBb/317/uOOlG7rm15avVUFK7SRKH92/aSMT0di7lx55vs3rKLjOlrZPrQF8LpP25Ag15LVYZxFYNLL15x2L3q3t4dCF82CYVVHsSe93ax4fnGmyiU8/l+MqavkX2w+k19jIHjG36CighIWtBYbnTofar7oM4Me9WAaJXhtTNrB5tfccjduV7kfL6fVRNTZIb1njKUEbPt2m+rMU55kPR78gEGzY+UJQp9nrqNrYkfOKUhbHHkm8OsmpiCyWiS6F3GPMyTc0Y47bqcYpooCvSP7MvD8+T5JlsTP+Czlduc1iBVHPnmMCsMy2SGdYp8iNEvRqAQhTqWXH+c1mVTKUQGPtWfB2fKbzGbX9nk1ESh3L3HSR67zHpSH+UWEy3uDMTF6tbe0IhAWXVBpa5/GKumaFyVuGCm1CIPwqyft47dW3bVodT6kbv3OEmRibIX/3KLCQH4aMFGdmZ80eDXVR0RyKj290aNh33CWDXhi+SP2b50KwJQZsO4jOlr2Pfp3toXXEfyDp9maVQiZcXSEFsFZsxYcBGufsM+eGUTX636tMGuyxoRmAoMAIbQgCsbfLRoM58ueR8AtaDEhIVyaewai9nC6phUfv7PAYdfT97h0ySGLZLFRIP6duTBuWFoVdIZRB8v2sLHi99rqOaS0CBhrOpYLBa2vvYuO9I/l+gKFyVd546kYM+vnPxM+u1SqV2YljWDDn3udsg1FZwoIH74q7Jhozu6t6f3C6Np1cyL418fYuvcTMyV0o7JwxMGMXzeKFlP2F7YCmOJAAbvaFeDd3TN85LriMViYfP89TLDlK4qnlw6kV7DetBlyjCC+naUbDeWVbByfLJDEoUKThSQMDLepmE9nwujRYAeQRBo268jI5dPQmkV0dmR/jmb569v0MCAaPCOHs/VCdgXDd7RUxx1IrPJzKZ5WXy3fqdEd3FzZUTSBIK7t0epEAnyd6frzBEEPCAdjyor/isX/vBpu11TUX4RS0Ytks0R87m3Jd3mjKR5gB5ltZhocPf2jFw+CRetWrL/d+t3svFfmQ02Z08EErm6HIUKWGIyVtr9e242mdkwJ4Pdm76R6C5aNaEpMQR3b39Nc1UpCfRzp+vsEfh3ayfZ/8qlKySGLeLP42fqfU1F+UUkhMZT+EehRPe5tyU9XhhNUKAXahvTjpp3bUto8mSZcT9s/o4NczIwWd0+HYGIdGUD9eWiy6q6FmYLk7GSdTPWsPfD3RJd7aklNHkygfe2lB2j07jg7+tOt2dG4mO1vaSwhMRRizl78mydr6n4fDGJoxbJ5ojp2zej+3Nh+Pt74u7mct3jA+9tSUT6NDR66aJ8ez/cTeaUVEwOnpfu0Jdrk7GSzNhV5Hzyo0TX6LWEr4q1aVgV3u4avLx1dH8+HL3VvOMLZ4pYGplYp0Sh4vPFLAlbREHunxJd374ZD7wYhZevBz4eN3+8+7YLJGxVrGxk/uBXOWRMTnHoAK/DTKsorWDtpBQOfpUj0XV+HoSlxuJrlfhjizu8dLh7uvHAi1F4tLpDsu3siQKWRiTUKlGoyjDrOWLuwX70eGE0Or2WAO+aL2np2zaQ8LQ4mXGHd/xM+gTHjcw7xLSK0grSJ6zgyM6fJbrOz5PwtKk1MgxAEKCZrwcaDw0PvBSFews/yfb8Y/m8PvxVTv188yzmX384xsKh/2PTsF4vR+PmpSPI173WXXd9C18iM2egb+4jPd/3R0gdkyB7UbcHdjetrLiUtLFJ/Pq91WyRIB/C0+LQt/CtVXkKUSDI1wO1XkvP+RG4Wc02OXuigFcHL+CNGen88v1RSQ+u/HI5ez/+LynjlrPoidc4//s5ybFuAV70nB+J2lNLkJ87ijqOnrv76wlLi8O3rfTDeHJ/LqsMSVwuKrFrGwsG72jJC8ZLuxLe8vD3jKxLYWXFpawyJHEqRzqBTt/ch7C0ONz99XW+0MtlRvLOXqL07EW+fT6LsvO2F1oTlSIevp6YjJU3vHVqm3nTa8EY1D4eBPm6o9Vcv+NRU0qLSngnNpVzv+ZL9MA7g+o04xNu8HJtD0oKi0mJSpAZ5tMmoN6GAWjVKvz0WjR+nvR5fazsGVeFudLMhTNFNzTMr1NrHlw4FrWPB356N7sYBqDx0jF6zTQCrDKs83/JIzlc/j5YV+xiWklhMalRieRZzZDxbRtI+KrYehtWhZe7Gk+dGrWPB33ix9H2yV4Itbilueq1hMQMpcf8SFw83PDUuuJViwnqNTqHTk1ocgzNu7aV6AXHz5ASsZgiq/fCulBv0y6cKSI5fJH1EncE3BNMWOoUNFaLo9UXf70WN1cVokrJ3U89woC0qbQP64MuyMfm/qJKge99rQiJHcYjq6YSPKgLgiDgplbhb+drq8JVp2bksomSoAHA+VNnWT7qNc6drN9klHo90y6cKSIlYjHnT0lfdAM6BhOaHIOrTl2TYmqN2Wwh79wlSsulL7HGklJK8gqpvFKGoFTg6uGGNshHlo/i5a7G11OLg2K81zAZTWydm8nxrw9KdM8AfY2nP9n1mXbuZAErRr0uM6xFt3YONQyupis09/PEx9MNsVrLq3QavO4Kwq9LW3zva4V7S3+JYVq1C8F3eOKnd7xhAAqVguHx47jrH50l+sUzF1gZlUD+0bw6lVsn086dLCAlUn5/bnF/O55cOsGhhlUhCODjoaFNMy/u8NKi07igUorXzBAEAZVSgU7jgp9eS5tmXgT5uduMJzoShUrB0FeiuftRyQqNXC4qYUV4PCf359a6zFrXIP9oHqnRiZRY9c7a9O3IYwufQqm2T0+spoiigKfuagelsSKIIo8uiELl5spPm7+7ppcVl5JmSGLC2mm0sXr+3bDOtTl5/tE8VkYl2DRsePy4BjfslkIQGDg3lG5Wy3iUlVwNRhz7/kiNi6qxaSf357IiPF72dt9hSFeGx49DoXJuhtItgSDw0Mwn6GGVRm4sM5I+fjkHv8ypUTE1Mu3k/lzSDEmyOFqHIV15dEFUk2G1pE/cMPrEDZNoxjIjmbGpHPhs302Pv6lpx74/wsqoxZSVSA0LCe3NowuiEMTGP9ulMdJj3AAetspSNlWayIxL5b8f7L7hsTds8WPfHSZ9/HKMZUaJHhLam4FzQ5sMqyddI/ox8LlRkgVQLWYLG+asZdfbX1/3uOv2Hg9+mUNmbKps+Lz72EfoGzeMBnnRuQ0ICe2NSuvKthc3XJvkYTFb2DQvC3OliS7De8iOsWnagc/3kTU1zbZhUx9zdj3/dtw9pBtKFxUfv7BOkqL37r/X2/zZGEUnTchLVtqVD155u7l1ZlGfuGH0njSEJhyDT+s78LsziN92HJCMCf62+xfZvoLBO/oC1ZN7BCxYpEmsfeKGybqpTTiGUz8c4/1Z6VSWG6+3y0UROCSRrAwbMHdUk2ENSHD39oQmx8hS9KpxSARszikSRIEBc0fRaVRvZ9fjtiOoc2tCkyej9nCztVkhAjanf/Sb8XiTYU4ksGMwWts/f/aRIqf0p1OdNCFhgGT1yHPH/qB9/5Drud2EAzFXmtg8fTVn5Gtlns0qzB5e9XYcjtUaWZfPF5MZHs/ejf8rm8LahOM4vfc30h9/hVN7ZL1GC1dXV5L8kOsMYKmtglRqF5p1aoVPmwDZchJN1B+T0UTJnxfI23+cy9dPSIrPKsx+DuS/c70EmOXsSjQhIyurMPvanEFJeD6n9KfPOmlCCoFBOHESfRPXsADzswqzZ1cXbQYQDd7RdwNrgAedfdW3MT8BkVmF2YesN9ww6vuXeROAx4CW2PhZ5SbsRjnwB/AFsMyWWVX8H2sL7Hj2Cn8sAAAAAElFTkSuQmCC"/>
+</svg>
+		    </a>
+                    <a href="https://linkedin.com/in/matthieubrion" class="social-link">
+			<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>LinkedIN</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social_icons_white" transform="translate(-600.000000, -200.000000)" fill="#FFFFFF">
+            <g id="LinkedIN" transform="translate(600.000000, 200.000000)">
+                <path d="M0,30 C0,13.4314567 13.4314567,0 30,0 C46.5685433,0 60,13.4314567 60,30 C60,46.5685433 46.5685433,60 30,60 C13.4314567,60 0,46.5685433 0,30 Z M21.2006775,24.8473104 L14.4020214,24.8473104 L14.4020214,45.2744497 L21.2006775,45.2744497 L21.2006775,24.8473104 Z M21.6484541,18.5283721 C21.6043281,16.5255041 20.1720674,15 17.84629,15 C15.5205126,15 14,16.5255041 14,18.5283721 C14,20.4897539 15.475572,22.0591846 17.7580381,22.0591846 L17.8014852,22.0591846 C20.1720674,22.0591846 21.6484541,20.4897539 21.6484541,18.5283721 Z M45.719232,33.5621523 C45.719232,27.2878186 42.3652519,24.3676416 37.8914228,24.3676416 C34.2817837,24.3676416 32.6656875,26.3503088 31.7633456,27.7411856 L31.7633456,24.8478527 L24.9638749,24.8478527 C25.0534846,26.7646298 24.9638749,45.274992 24.9638749,45.274992 L31.7633456,45.274992 L31.7633456,33.8667921 C31.7633456,33.2562922 31.8074716,32.6472837 31.9872339,32.2101858 C32.4785934,30.9905418 33.5973562,29.7277845 35.4756285,29.7277845 C37.9367708,29.7277845 38.920576,31.6009061 38.920576,34.3459186 L38.920576,45.2744497 L45.7189605,45.2744497 L45.719232,33.5621523 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+		    </a>
+                    <a href="https://cactegra.medium.com/" class="social-link">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="50" height="50" preserveAspectRatio="xMinYMin" class="jam jam-medium-circle"><path d='M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z'/><path d='M6.186 7.632a.392.392 0 0 0-.126-.33L5.126 6.17V6h2.9l2.24 4.952L12.236 6H15v.17l-.798.77a.236.236 0 0 0-.089.226v5.668a.236.236 0 0 0 .089.225l.78.772V14H11.06v-.17l.807-.79c.08-.08.08-.103.08-.225V8.234L9.7 13.981h-.303L6.783 8.234v3.852a.534.534 0 0 0 .145.442l1.05 1.284v.17H5v-.17l1.05-1.284a.515.515 0 0 0 .136-.442V7.632z'/></svg>
+		    </a>
+                    <a href="https://github.com/cactegra" class="social-link">
+			<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="59px" viewBox="0 0 60 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social_icons_white" transform="translate(-702.000000, -703.000000)" fill="#FFFFFF">
+            <g id="Github" transform="translate(702.000000, 703.000000)">
+                <path d="M30.0540496,0.221187491 C13.5183471,0.221187491 0.109586777,13.6288194 0.109586777,30.1692795 C0.109586777,43.40135 8.68958678,54.6273591 20.587438,58.5874087 C22.0839669,58.864637 22.6333884,57.9377325 22.6333884,57.1467144 C22.6333884,56.4325665 22.6056198,54.0733985 22.5927273,51.5709051 C14.2621488,53.3825596 12.5042975,48.0373605 12.5042975,48.0373605 C11.1421488,44.5757267 9.17950413,43.6552693 9.17950413,43.6552693 C6.46264463,41.7965009 9.38429752,41.834688 9.38429752,41.834688 C12.3912397,42.0454608 13.9745455,44.9208982 13.9745455,44.9208982 C16.6452893,49.4993801 20.9796694,48.1757267 22.6884298,47.4104973 C22.9571901,45.4753547 23.7332231,44.1531891 24.5895868,43.4058135 C17.9385124,42.6485191 10.9467769,40.0805621 10.9467769,28.6050971 C10.9467769,25.3353905 12.1165289,22.6637829 14.0320661,20.5664692 C13.721157,19.8116545 12.6961983,16.766111 14.3221488,12.6409147 C14.3221488,12.6409147 16.8366942,11.8360105 22.5590083,15.7107591 C24.9476033,15.0471966 27.5092562,14.7144235 30.0540496,14.7030169 C32.598843,14.7144235 35.1624793,15.0471966 37.5555372,15.7107591 C43.2709091,11.8360105 45.7819835,12.6409147 45.7819835,12.6409147 C47.4119008,16.766111 46.3864463,19.8116545 46.0755372,20.5664692 C47.9955372,22.6637829 49.1573554,25.3353905 49.1573554,28.6050971 C49.1573554,40.1078385 42.1522314,42.6405841 35.4842975,43.3820085 C36.5583471,44.3113928 37.5153719,46.1339578 37.5153719,48.9280617 C37.5153719,52.9347293 37.4806612,56.1598016 37.4806612,57.1467144 C37.4806612,57.9436837 38.0196694,58.8775313 39.5375207,58.5834412 C51.4289256,54.6189282 59.9980165,43.3968866 59.9980165,30.1692795 C59.9980165,13.6288194 46.5912397,0.221187491 30.0540496,0.221187491" id="Fill-51"></path>
+                <path d="M11.4510744,43.2203334 C11.385124,43.3696101 11.1510744,43.4137485 10.9378512,43.3115856 C10.7206612,43.2138862 10.5986777,43.0110484 10.6690909,42.8617716 C10.7335537,42.7085273 10.9680992,42.6663728 11.1847934,42.7680397 C11.4024793,42.866235 11.5264463,43.0710566 11.4510744,43.2203334" id="Fill-52"></path>
+                <path d="M12.6639669,44.573247 C12.521157,44.7056619 12.2419835,44.6441659 12.052562,44.4348808 C11.8566942,44.2260917 11.82,43.9468797 11.9647934,43.8124811 C12.1120661,43.6800661 12.3828099,43.7420581 12.5791736,43.9508472 C12.7750413,44.162116 12.8132231,44.4393443 12.6639669,44.573247" id="Fill-53"></path>
+                <path d="M13.8446281,46.2981127 C13.661157,46.4255683 13.361157,46.3060477 13.1757025,46.03973 C12.9922314,45.7734123 12.9922314,45.4540295 13.1796694,45.326078 C13.3656198,45.1981265 13.661157,45.3131836 13.8490909,45.5775176 C14.0320661,45.8478027 14.0320661,46.1676815 13.8446281,46.2981127" id="Fill-54"></path>
+                <path d="M15.4621488,47.9644579 C15.2980165,48.1454746 14.9484298,48.0968728 14.692562,47.8498967 C14.4307438,47.6083758 14.3578512,47.265684 14.5224793,47.0846673 C14.688595,46.9031547 15.0401653,46.9542361 15.2980165,47.1992285 C15.5578512,47.4402535 15.6371901,47.785425 15.4621488,47.9644579" id="Fill-55"></path>
+                <path d="M17.6935537,48.9320292 C17.621157,49.166607 17.2844628,49.2732332 16.9452893,49.1735501 C16.6066116,49.0708913 16.3849587,48.7961427 16.4533884,48.5590853 C16.5238017,48.3230197 16.8619835,48.21193 17.2036364,48.3185563 C17.5418182,48.4207191 17.7639669,48.693484 17.6935537,48.9320292" id="Fill-56"></path>
+                <path d="M20.1441322,49.1115581 C20.152562,49.3585342 19.8649587,49.5633558 19.5089256,49.5673233 C19.1509091,49.5757542 18.8613223,49.375892 18.8573554,49.1328833 C18.8573554,48.8834275 19.1385124,48.6805896 19.4965289,48.6746384 C19.852562,48.6676953 20.1441322,48.8660697 20.1441322,49.1115581" id="Fill-57"></path>
+                <path d="M22.4246281,48.7232401 C22.4672727,48.9642651 22.2198347,49.2117372 21.866281,49.2772007 C21.5186777,49.3411765 21.1968595,49.1923956 21.1527273,48.9533545 C21.1095868,48.7063783 21.3614876,48.4589062 21.708595,48.3949304 C22.0626446,48.3334344 22.3795041,48.4782477 22.4246281,48.7232401" id="Fill-58"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+		    </a>
                 </div>
-                <p>&copy; 2025 Matthieu Brion. Built with Django, HTML5, CSS3 & JavaScript.</p>
+		<p>&copy; 2025 Matthieu Brion. Built with <b>HTML5</b>, <b>CSS3</b>, <b>JavaScript</b> & <b>Expertise</b>.</p>
             </div>
         </div>
     </footer>
@@ -837,7 +908,9 @@
             
             parallaxElements.forEach(element => {
                 const speed = 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
+		if (scrolled * speed <= 94) {
+                	element.style.transform = `translateY(${scrolled * speed}px)`;
+		}
             });
         });
 
@@ -872,8 +945,8 @@
         // Dynamic background color change on scroll
         window.addEventListener('scroll', () => {
             const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-            const hue = 240 + (scrollPercent * 60); // Changes from blue to purple
-            document.documentElement.style.setProperty('--primary', `hsl(${hue}, 70%, 60%)`);
+            const hue = 236 + (scrollPercent * 40); // Changes from blue to purple
+            document.documentElement.style.setProperty('--primary', `hsl(${hue}, 68%, 35%)`);
         });
 
         // Add typing effect to hero title
