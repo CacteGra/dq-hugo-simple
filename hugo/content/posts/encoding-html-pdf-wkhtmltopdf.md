@@ -32,15 +32,9 @@ To encode your font to Base64 use [this site](https://amio.github.io/embedded-go
 And the website will directly output an embedded Base64 font for your CSS style. A word of caution here, it will output multiple **@font-face** if the linked font has them: choose one of them.  
 Dump it (or include it) in your HMTL file, and retry wkhtmlto and it should work flawlessly.  
 ## Example
-Here is an example using my resume in [HTML](/html/resume-example.html), and its [output in .pdf](/images/posts/html-to-pdf-resume-example.png).    
+Here is an example using my resume in [HTML](/html/resume-example.html), and a screenshot of its output in .pdf  
+![](/images/posts/html-to-pdf-resume-example.png).  
   
-    
-   
-     
-     
-  
-  
-
 ## ---  
-
+  
 ###### Thanks to [Ranjith kumar](https://codingislove.com/author/ranjithkumar10/)'s [article](https://codingislove.com/custom-font-pdfkit-wkhtmltopdf/) which helped me a great deal.
