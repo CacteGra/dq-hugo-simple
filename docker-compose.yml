@@ -17,6 +17,7 @@ services:
       - ./caddy/config:/config
       - ./caddy/data:/data
       - ./casing:/www/html
+      - ./kanmind:/www/html
     networks:
       websites:
 
