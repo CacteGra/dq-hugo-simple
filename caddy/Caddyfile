@@ -6,6 +6,15 @@ www.{$DOMAIN_NAME_CASING:showcase.localhost} {
     redir https://{$DOMAIN_NAME_CASING:showcase.localhost}{uri}
 }
 
+{$DOMAIN_NAME_KANMIND:showcase.localhost} {
+    root * /www/html
+    file_server
+}
+www.{$DOMAIN_NAME_KANMIND:showcase.localhost} {
+    redir https://{$DOMAIN_NAME_KANMIND:showcase.localhost}{uri}
+}
+
+
 {$DOMAIN_NAME} {
     reverse_proxy hugging_hugo_blog:1313
 }

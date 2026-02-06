@@ -10,6 +10,7 @@ services:
     environment:
       - DOMAIN_NAME
       - DOMAIN_NAME_CASING
+      - DOMAIN_NAME_KANMIND
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/static:/srv
