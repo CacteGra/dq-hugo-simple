@@ -27,6 +27,9 @@ description: "Optimal install and run to serve a LLM through llama.cpp."
 	- Vulkan does not release the vulkan-sdk packages for Ubuntu anymore. We have installed dependencies, but lack the real thing.
 	- We have to manually run the SDK installer.
 	- Go to https://vulkan.lunarg.com/sdk/home#linux and download the tarball (**.tar.xz**) file.
+```
+wget https://sdk.lunarg.com/sdk/download/1.4.341.1/linux/vulkansdk-linux-x86_64-1.version.version.version.tar.xz
+```
 	- Compression utility xz should be installed, if not:
 	  ````
 	  sudo apt install xz-utils
@@ -73,7 +76,6 @@ description: "Optimal install and run to serve a LLM through llama.cpp."
 	  ````
 	  cd ~
 	  git clone https://github.com/ggerganov/llama.cpp.git
-	  cd llama.cpp
 	  ````
 	- Build llama.cpp:
 	  ````
