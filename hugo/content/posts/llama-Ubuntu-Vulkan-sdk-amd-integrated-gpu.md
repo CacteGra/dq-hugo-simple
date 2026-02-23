@@ -97,3 +97,25 @@ wget https://sdk.lunarg.com/sdk/download/1.4.341.1/linux/vulkansdk-linux-x86_64-
 	  ```
 	- For connecting inside a local network use your machine's IP address after **--host**.
 - ### Thanks to [Siarhei Berdachuk](https://berdachuk.com/ai/local-ai-on-mini-pcs-a-simple-guide-for-amd-systems) for the tutorial.
+
+---
+### **Update 2026-02-23**  
+Llama.cpp has made tremendous progress, and now is the time to get our installation up to date to the latest versions both for Llama.cpp and Vulkan.
+
+Keep your installation, and create a new folder for vulkan:
+```
+mkdir vulkan-update
+```
+Follow the same steps as previously using the newer Vulkan SDK installer
+As for llama.cpp, clone into a different directory:
+```
+git clone https://github.com/ggerganov/llama.cpp.git llama.cpp-update
+```
+And continue with this build guide.
+Check that everything is running smoothly, and delete previous version and rename the new folders:
+```
+cd ~/
+rm -rf vulkan && rm -rf llama.cpp
+mv vulkan-update vulkan
+mv llama.cpp-update llama.cpp
+```
