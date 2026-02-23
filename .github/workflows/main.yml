@@ -15,7 +15,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          script: cd ${{ secrets.PROJECT_PATH }} && git pull origin master --recurse-submodules
+          script: cd ${{ secrets.PROJECT_PATH }} && git pull origin master --recurse-submodules && git submodule update --recursive --remote
 
       - uses: actions/checkout@v2
       - name: Build the docker-compose stack
