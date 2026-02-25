@@ -648,4 +648,7 @@ Wagtail is primarily on being CMS to provide a better interface and workflow tha
 
 Go to `127.0.0.1:8001`, login, then Snippets and add a location object and you either enter latitude/longitude coordinates or drag the pin to the desired location.
 
-A word of caution, a local GDAL is still necessary in order to migrate models (`python manage.py makemigrations`).
+A word of caution, a local GDAL is still necessary in order to migrate models (`python manage.py makemigrations`). On Fedora simply run the following command to install GDAL at system level.
+```
+sudo dnf -y install gdal
+```
